@@ -1,0 +1,13 @@
+orders:
+{"features":[{"geometry":{"x":-117.15492010116579,"y":32.707460475225176},"attributes":{"DeliveryQuantities":1706,"Name":"Store_1","ServiceTime":25,"TimeWindowStart1":1355245200000,"TimeWindowEnd1":1355274000000,"MaxViolationTime1":0}},{"geometry":{"x":-117.05833911895752,"y":32.73822149105837},"attributes":{"DeliveryQuantities":1533,"Name":"Store_2","ServiceTime":23,"TimeWindowStart1":1355245200000,"TimeWindowEnd1":1355274000000,"MaxViolationTime1":0}},{"geometry":{"x":-117.26085662841794,"y":32.84275475764822},"attributes":{"DeliveryQuantities":1580,"Name":"Store_3","ServiceTime":24,"TimeWindowStart1":1355245200000,"TimeWindowEnd1":1355274000000,"MaxViolationTime1":0}},{"geometry":{"x":-117.15595006942746,"y":32.82030715512063},"attributes":{"DeliveryQuantities":1289,"Name":"Store_4","ServiceTime":20,"TimeWindowStart1":1355245200000,"TimeWindowEnd1":1355274000000,"MaxViolationTime1":0}}]}
+
+depots:
+{"features":[{"geometry":{"x":-117.06778049468996,"y":32.775088223692805},"attributes":{"Name":"San Diego State","TimeWindowStart1":1355241600000,"TimeWindowEnd1":1355274000000}}]}
+
+routes:
+{"features":[{"attributes":{"Name":"Truck_1","StartDepotName":"San Diego State","EndDepotName":"San Diego State","StartDepotServiceTime":60,"EarliestStartTime":1355241600000,"LatestStartTime":1355241600000,"Capacities":"15000","CostPerUnitTime":0.2,
+    "CostPerUnitDistance":1.5,"MaxOrderCount":2,"MaxTotalTime":360,"MaxTotalTravelTime":120,"MaxTotalDistance":80}},
+    {"attributes":{"Name":"Truck_2","StartDepotName":"San Diego State","EndDepotName":"San Diego State","StartDepotServiceTime":60,"EarliestStartTime":1355241600000,"LatestStartTime":1355241600000,"Capacities":"15000","CostPerUnitTime":0.2,
+    "CostPerUnitDistance":1.5,"MaxOrderCount":2,"MaxTotalTime":360,"MaxTotalTravelTime":120,"MaxTotalDistance":80}},
+    {"attributes":{"Name":"Truck_3","StartDepotName":"San Diego State","EndDepotName":"San Diego State","StartDepotServiceTime":60,"EarliestStartTime":1355241600000,"LatestStartTime":1355241600000,"Capacities":"15000","CostPerUnitTime":0.2,
+    "CostPerUnitDistance":1.5,"MaxOrderCount":2,"MaxTotalTime":360,"MaxTotalTravelTime":120,"MaxTotalDistance":80}}]}

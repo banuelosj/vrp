@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>VRP Testing</title>
+    <link href="https://sampleserver6.arcgisonline.com/arcgis/rest/static/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./jsapiStyle.css"/>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+
+<script src="https://js.arcgis.com/4.11/"></script>
+<script type="text/javascript" src="./app.js"></script>
+
+</head>
+<body>
+  <h1>VRP Testing Site (for internal use only)</h1><br>
+  <p><b>Please select a vrp service to test with:</b></p>
+  <input id="sampleServerRadio" type="radio" name="vrpService" value="sampleserver6" checked=true>https://sampleserver6.arcgisonline.com<br>
+  <input id="logisticsRadio" type="radio" name="vrpService" value="logistics">https://logistics.arcgis.com<br>
+  <br>
+  <p><a href="./vrpAppParamsTest.txt" target="_blank">Sample Data</a> to test with.</p>
+
+  <div class="rbody">
+    <form id="theForm" name="sdform" action="https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveVehicleRoutingProblem/submitJob">
+        <table class="formTable left-element">
+          <tbody>
+            <tr valign="top">
+              <td>
+                <label for="orders">Orders:
+                  <br><p>(required field)</p>
+                </label>
+              </td>
+              <td>
+                <textarea id="orders" name="orders" rows="10" cols="50">{}</textarea>
+              </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                  <label for="depots">Depots:
+                      <br><p>(required field)</p>
+                  </label>
+                </td>
+                <td>
+                  <textarea id="depots" name="depots" rows="10" cols="50">{}</textarea>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                  <label for="routes">Routes:
+                      <br><p>(required field)</p>
+                  </label>
+                </td>
+                <td>
+                  <textarea id="routes" name="routes" rows="10" cols="50">{}</textarea>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                  <label for="breaks">Breaks:
+                      <br><p></p>
+                  </label>
+                </td>
+                <td>
+                  <textarea id="breaks" name="breaks" rows="10" cols="50"></textarea>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                  <label for="route_line_simplification_tolerance">route_line_simplification_tolerance:
+                      <br><p></p>
+                  </label>
+                </td>
+                <td>
+                  <textarea id="route_line_simplification_tolerance" name="route_line_simplification_tolerance" rows="10" cols="50"></textarea>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                  <label for="travel_mode">Travel_Mode:</label>
+                </td>
+                <td>
+                  <textarea id="travel_mode" name="travel_mode" rows="10" cols="50"></textarea>
+                </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="attribute_parameter_values">attribute_parameter_values:
+                        <br><p></p>
+                    </label>
+                  </td>
+                  <td>
+                    <textarea id="attribute_parameter_values" name="attribute_parameter_values" rows="10" cols="50"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                    <td>
+                      <label for="uturn_policy">Uturn_Policy</label>
+                    </td>
+                    <td>
+                        <select name="uturn_policy" id="uturn_select">
+                            <option value="ALLOW_UTURNS" selected="selected">ALLOW_UTURNS</option>
+                            <option value="NO_UTURNS">NO_UTURNS</option>
+                            <option value="ALLOW_DEAD_ENDS_ONLY">ALLOW_DEAD_ENDS_ONLY</option>
+                            <option value="ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY">ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY</option>
+                        </select>
+                    </td>
+                </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="restrictions">Restrictions</label>
+                  </td>
+                  <td>
+                    <textarea id="restrictions" name="restrictions" value size="100">[Driving an Emergency Vehicle]</textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="directions_language">Directions_Language</label>
+                  </td>
+                  <td>
+                    <textarea  id="directions_language" name="directions_language" value size="10">en</textarea>
+                  </td>
+                  
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="time_units">Time_Units</label>
+                  </td>
+                  <td>
+                    <textarea id="time_units" name="time_units" value size="15">Minutes</textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="distance_units">Distance_Units</label>
+                  </td>
+                  <td>
+                    <textarea id="distance_units" name="distance_units" value size="15">Miles</textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="default_date">Default_Date</label>
+                  </td>
+                  <td>
+                    <textarea id="default_date" name="default_date" value size="15">1574873699493</textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="time_zone_usage_for_time_fields">Distance_Units</label>
+                  </td>
+                  <td>
+                    <textarea id="time_zone_usage_for_time_fields" name="time_zone_usage_for_time_fields" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="use_hierarchy_in_analysis">use_hierarchy_in_analysis</label>
+                  </td>
+                  <td>
+                    <textarea id="use_hierarchy_in_analysis" name="use_hierarchy_in_analysis" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="spatially_cluster_routes">spatially_cluster_routes</label>
+                  </td>
+                  <td>
+                    <textarea id="spatially_cluster_routes" name="spatially_cluster_routes" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="impedance">impedance</label>
+                  </td>
+                  <td>
+                    <textarea id="impedance" name="impedance" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="time_window_factor">time_window_factor</label>
+                  </td>
+                  <td>
+                    <textarea id="time_window_factor" name="time_window_factor" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="save_route_data">save_route_data</label>
+                  </td>
+                  <td>
+                    <textarea id="save_route_data" name="save_route_data" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr valign="top">
+                  <td>
+                    <label for="populate_directions">populate_directions</label>
+                  </td>
+                  <td>
+                    <textarea id="populate_directions" name="populate_directions" value size="15"></textarea>
+                  </td>
+              </tr>
+              <tr>
+                <td cospan="1" align="left">
+                  <input type="submit" onclick="this.form.method = 'post';" value="Solve Route (POST)">
+                </td>
+              </tr>
+          </tbody>
+        </table>
+    </form>
+    
+  </div>
+  
+  <div id="result"></div>
+  <div id="viewDiv">
+      <button class="clear_button" id="clearRoutesButton">Clear Routes</button>
+  </div>
+  <br>
+  <br>
+  
+</body>
+</html>

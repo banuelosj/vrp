@@ -1,0 +1,50 @@
+html, body{
+    height: 100%;
+    width: 90%;
+}
+
+#viewDiv {
+    height: 80%;
+    width: 50%;
+    float: right;
+    padding-top: 10%;
+    /* background-image: url("./carBackground.jpg"); */
+}
+
+.clear_button {
+    background-color: #228b22;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    visibility: hidden;
+}
+
+.theContainer {
+    width: 100%;
+    background: #80B7E0;
+    border-style: dotted;
+}
+
+.form1 {
+    width: 40%;
+    float: left;
+}
+
+.viewContainer {
+    width: 50%;
+    height: 50%;
+    border-color: grey;
+    border-style: solid;
+    float: left;
+}
+
+/* h1 {
+    background: #E5EFF7
+} */
